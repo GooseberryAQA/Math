@@ -4,7 +4,7 @@ derivative calculator
 无穷小指趋向0，无穷大指 $\infty$ 或 $-\infty$
 > 等价无穷小
 
-## 极限定义
+## 极限
 ---
 **<font color = #FA58AC>数列极限</font>：若对于每一个正数$\varepsilon$，恒有序号N，使得n>N时，所有$x_n$的值均满足不等式<font color = green>$|x_n - a| < \varepsilon$</font> 。则称常数a是<font color = green>整序变量$x_n$</font>的极限**
 
@@ -17,9 +17,12 @@ typedef struct Node{
     void data;
     struct Node* next;
 }Node;
-
+/*
+array means X_n
+n type must be integer
+*/
 int main(){
-    int array[n];   // n type must be integer
+    int array[n];
     memset(array,'\0',n);
     Node* node = (Node*)malloc(sizeof(Node));
     for (int i=0;i<array.length();i++){
@@ -31,8 +34,9 @@ int main(){
 > **极限存在：<br>(1)对函数，函数单调有界是极限存在的充要条件<br>(2)对数列，数列收敛，则极限必定存在**
 
 1. 夹逼定理
+...
 
-### 性质
+### 性质 
 ---
 + 若对于级数$\displaystyle\sum_{a=1}^n{x_a}$，有级数$\displaystyle\sum_{a=1}^n|{x_a}|$也收敛，则称为绝对收敛级数（可以改变求和顺序）
 +
@@ -50,10 +54,23 @@ int main(){
 
 指数函数时求极限，可以采用以$e$为底是个很好的选择。<br>如:$({1 + \frac{1}{x}})^x$ = $e^{xln(1+\frac{1}{x})}$
 
+### 不定式
+---
+
+一共分为以下7种：
+
+$\frac{0}{0},\frac{\infty}{\infty},\infty-\infty,0*\infty,1^\infty,0^\infty,0^0$ 
+
+| 极限类型 | 常用方法 |
+|:----:|:----|
+| $\frac{0}{0}$ | 1.洛必达<br>2.等价无穷小<br>3.泰勒公式 |
+### 极限求解
+----
+
 ## 连续
 定义: if $|x - a| < \delta $ then $|f(x) - f(a)| < \varepsilon$
-> 注意：$极限不要求在f(x)在x_0处有定义,而连续需要$<br>
-如果$$\lim_{x \to x_0 }f(x) = f(x_0)$$，则说明函数连续
+> 注意：$函数极限不要求在f(x)在x_0处有定义,而连续需要$<br>
+如果$$\lim_{x \to x_0 }f(x) = f(x_0)$$，则说明函数连续<br>数列$x_n$极限也不要求能通过公式取到，因为可能是无穷的
 
 
 ## 导数
